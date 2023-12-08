@@ -2,6 +2,12 @@
 <html data-bs-theme="light">
 
 <head>
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArxLbVbZ5E7klDzF3pEyl-kvOP530ojAs"></script>
+  <style>
+    #map {
+      height: 400px;
+    }
+  </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Home - Brand</title>
@@ -11,12 +17,6 @@
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/pikaday.min.css">
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArxLbVbZ5E7klDzF3pEyl-kvOP530ojAs"></script>
-  <style>
-    #map {
-      height: 400px;
-    }
-  </style>
 </head>
 
 <body style="background: rgb(15, 211, 245);;">
@@ -34,10 +34,9 @@
                 </ul>
             </div>
         </div>
-
 <div id="map"></div>
 
-<script>
+ <script>
   function initMap() {
     var cancun = { lat: 21.1619, lng: -86.8515 };
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -59,11 +58,11 @@
       map: map
     });
   }
-</script>
+ </script>
 
-<script>
-  initMap(); // Inicializa el mapa al cargar la página
-</script>
+ <script>
+   initMap(); // Inicializa el mapa al cargar la página
+ </script>
 
 </div>
     <section class="portfolio-block skills">
