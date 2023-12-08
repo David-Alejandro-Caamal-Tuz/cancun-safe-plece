@@ -15,7 +15,6 @@
   <style>
     #map {
       height: 400px;
-      transition: height 0.5s ease;/* Agrega una transición suave para los cambios de altura */
     }
   </style>
 </head>
@@ -35,8 +34,7 @@
                 </ul>
             </div>
         </div>
-    </nav><div id="map">  
-    </div><button onclick="changeMapSize()">Cambiar tamaño</button>
+    </nav><div id="map"></div>
     <section class="portfolio-block skills">
         <div class="container">
             <div class="heading">
@@ -124,8 +122,6 @@
     </div>
     <script>
   <script>
-  var isExpanded = true; // Variable para controlar el estado del tamaño del mapa
-
   function initMap() {
     var cancun = { lat: 21.1619, lng: -86.8515 };
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -147,18 +143,7 @@
       map: map
     });
   }
-      function changeMapSize() {
-    var mapElement = document.getElementById('map');
-    if (isExpanded) {
-      mapElement.style.height = '200px'; // Cambia la altura del mapa
-      isExpanded = false;
-    } else {
-      mapElement.style.height = '400px'; // Restaura la altura original del mapa
-      isExpanded = true;
-    }
-  }
 </script>
-
 <script>
   initMap(); // Inicializa el mapa al cargar la página
 </script>
