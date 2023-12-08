@@ -120,13 +120,12 @@
             </div>
         </div>
     </div>
-    <script>
   <script>
   function initMap() {
     var cancun = { lat: 21.1619, lng: -86.8515 };
     var map = new google.maps.Map(document.getElementById('map'), {
       center: cancun,
-      zoom: 10,
+      zoom: 12,
       restriction: {
         latLngBounds: {
           north: 21.23,
@@ -144,6 +143,7 @@
     });
   }
 </script>
+    
 <script>
   initMap(); // Inicializa el mapa al cargar la página
 </script>
