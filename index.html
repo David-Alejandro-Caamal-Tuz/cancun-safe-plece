@@ -123,12 +123,14 @@
         </div>
     </div>
     <script>
+  <script>
   var isExpanded = true; // Variable para controlar el estado del tamaño del mapa
+
   function initMap() {
     var cancun = { lat: 21.1619, lng: -86.8515 };
     var map = new google.maps.Map(document.getElementById('map'), {
       center: cancun,
-      zoom: 12,
+      zoom: 10,
       restriction: {
         latLngBounds: {
           north: 21.23,
@@ -144,6 +146,7 @@
       url: 'https://raw.githubusercontent.com/David-Alejandro-Caamal-Tuz/cancun-safe-plece/main/MAPA%20GENERAL%20MODIFICADO%20Y%20ACTUALIZADO.kml', // Ruta al archivo KML en tu sistema local
       map: map
     });
+  }
       function changeMapSize() {
     var mapElement = document.getElementById('map');
     if (isExpanded) {
