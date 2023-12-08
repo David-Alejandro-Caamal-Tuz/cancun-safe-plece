@@ -15,6 +15,7 @@
   <style>
     #map {
       height: 400px;
+        transition: height 0.5s ease; /* Agrega una transición suave para los cambios de altura */
     }
   </style>
 </head>
@@ -35,6 +36,7 @@
             </div>
         </div>
     </nav><div id="map"></div>
+    <button onclick="changeMapSize()">Cambiar tamaño</button>
     <section class="portfolio-block skills">
         <div class="container">
             <div class="heading">
@@ -121,6 +123,8 @@
         </div>
     </div>
   <script>
+      var isExpanded = true; // Variable para controlar el estado del tamaño del mapa
+
   function initMap() {
     var cancun = { lat: 21.1619, lng: -86.8515 };
     var map = new google.maps.Map(document.getElementById('map'), {
@@ -141,6 +145,16 @@
       url: 'https://raw.githubusercontent.com/David-Alejandro-Caamal-Tuz/cancun-safe-plece/main/MAPA%20GENERAL%20MODIFICADO%20Y%20ACTUALIZADO.kml', // Ruta al archivo KML en tu sistema local
       map: map
     });
+  }
+      function changeMapSize() {
+    var mapElement = document.getElementById('map');
+    if (isExpanded) {
+      mapElement.style.height = '200px'; // Cambia la altura del mapa
+      isExpanded = false;
+    } else {
+      mapElement.style.height = '400px'; // Restaura la altura original del mapa
+      isExpanded = true;
+    }
   }
 </script>
     
