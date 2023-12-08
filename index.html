@@ -11,6 +11,26 @@
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/pikaday.min.css">
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArxLbVbZ5E7klDzF3pEyl-kvOP530ojAs"></script>
+<style>
+      /* Estilos para el contenedor del mapa */
+      #map-container {
+          position: relative;
+          width: calc(100% - 40px); /* Ajuste de los laterales */
+          padding-bottom: 50%; /* Altura relativa para mantener el aspecto del mapa */
+          margin: 0 auto; /* Centra horizontalmente el contenedor */
+          max-width: 1200px; /* Ancho máximo del contenedor del mapa */
+      }
+
+      /* Estilos para el mapa en sí */
+      #map {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+      }
+  </style>
 </head>
 
 <body style="background: #ffffff;">
@@ -28,7 +48,9 @@
                 </ul>
             </div>
         </div>
-    </nav><iframe allowfullscreen="" frameborder="0" loading="lazy" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyArxLbVbZ5E7klDzF3pEyl-kvOP530ojAs&amp;q=Cancun%2C+mexico&amp;zoom=15" width="100%" height="400"></iframe>
+    </nav>
+<div id="map-container">
+  <div id="map"></div>
     <section class="portfolio-block skills">
         <div class="container">
             <div class="heading">
@@ -109,6 +131,31 @@
             </div>
         </div>
     </div>
+    <script>
+  function initMap() {
+    var cancun = { lat: 21.1619, lng: -86.8515 };
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: cancun,
+      zoom: 12,
+      restriction: {
+        latLngBounds: {
+          north: 21.23,
+          south: 21,
+          west: -87.1,
+          east: -86.6
+        },
+        strictBounds: false
+      }
+    });
+
+    var kmlLayer = new google.maps.KmlLayer({
+      url: 'https://raw.githubusercontent.com/David-Alejandro-Caamal-Tuz/cancun-safe-plece/main/Terminado.kml', // Ruta al archivo KML en tu sistema local
+      map: map
+    });
+  }
+
+  initMap(); // Inicializa el mapa al cargar la página
+</script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/chart.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
