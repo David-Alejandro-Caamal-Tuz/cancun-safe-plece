@@ -13,17 +13,23 @@
     <link rel="stylesheet" href="assets/css/pikaday.min.css">
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArxLbVbZ5E7klDzF3pEyl-kvOP530ojAs"></script>
     <style>
-    #map-container {
-      position: relative;
-      width: 100%;
-      padding-bottom: 50%; /* Establece la altura relativa para mantener el aspecto del mapa */
-    }
-    #map {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;    }
+      /* Estilos para el contenedor del mapa */
+      #map-container {
+          position: relative;
+          width: calc(100% - 40px); /* Ajuste de los laterales */
+          padding-bottom: 50%; /* Altura relativa para mantener el aspecto del mapa */
+          margin: 0 auto; /* Centra horizontalmente el contenedor */
+          max-width: 1200px; /* Ancho máximo del contenedor del mapa */
+      }
+
+      /* Estilos para el mapa en sí */
+      #map {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+      }
   </style>
 </head>
 
