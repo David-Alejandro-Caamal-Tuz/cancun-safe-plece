@@ -11,6 +11,12 @@
     <link rel="stylesheet" href="assets/fonts/fontawesome-all.min.css">
     <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
     <link rel="stylesheet" href="assets/css/pikaday.min.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyArxLbVbZ5E7klDzF3pEyl-kvOP530ojAs"></script>
+  <style>
+    #map {
+      height: 400px;
+    }
+  </style>
 </head>
 
 <body style="background: rgb(15, 211, 245);;">
@@ -28,7 +34,7 @@
                 </ul>
             </div>
         </div>
-    </nav>
+    </nav><div id="map"></div>
     <section class="portfolio-block skills">
         <div class="container">
             <div class="heading">
@@ -114,6 +120,33 @@
             </div>
         </div>
     </div>
+    <script>
+  function initMap() {
+    var cancun = { lat: 21.1619, lng: -86.8515 };
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: cancun,
+      zoom: 12,
+      restriction: {
+        latLngBounds: {
+          north: 21.23,
+          south: 21,
+          west: -87.1,
+          east: -86.6
+        },
+        strictBounds: false
+      }
+    });
+
+    var kmlLayer = new google.maps.KmlLayer({
+      url: 'https://raw.githubusercontent.com/David-Alejandro-Caamal-Tuz/cancun-safe-plece/main/MAPA%20GENERAL%20MODIFICADO%20Y%20ACTUALIZADO.kml', // Ruta al archivo KML en tu sistema local
+      map: map
+    });
+  }
+</script>
+
+<script>
+  initMap(); // Inicializa el mapa al cargar la página
+</script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/chart.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
